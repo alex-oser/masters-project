@@ -55,6 +55,9 @@ def cmd_loop():
 				student_id = raw_input('>>> ').strip()
 				if student_id == 'cancel':
 					continue
+				while not len(student_id) == 6:
+					print('Your student ID was entered incorrectly, please try again')
+					student_id = raw_input('>>> ').strip()
 			success = post_to_form(info, student_id)
 			if success:
 				print('> Success!')
